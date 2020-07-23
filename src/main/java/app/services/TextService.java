@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class TextService {
-
     public List<String> convertStrings(List<String> stringList) {
         return stringList.stream()
                 .sorted(Comparator.comparing(String::length))
