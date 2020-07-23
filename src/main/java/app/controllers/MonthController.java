@@ -2,7 +2,7 @@ package app.controllers;
 
 import app.services.MonthService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,8 +13,8 @@ public class MonthController {
         this.monthService = monthService;
     }
 
-    @GetMapping("/get")
-    public String getMonth(@RequestParam int monthNumber) {
+    @GetMapping("/get/{monthNumber}")
+    public String getMonth(@PathVariable int monthNumber) {
         if (monthNumber > 0 && monthNumber < 13) {
             return monthService.getMonth(monthNumber);
         } else return "INCORRECT INPUT DATA";
