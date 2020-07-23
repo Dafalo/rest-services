@@ -16,8 +16,8 @@ public class TextController {
         this.textService = textService;
     }
 
-    @PostMapping("/post")
-    public List<String> post(@RequestBody List<String> list) {
+    @PostMapping("/convertedStrings")
+    public List<String> convertStrings(@RequestBody List<String> list) {
         return textService.convertStrings(list);
     }
 

@@ -13,7 +13,7 @@ public class MonthController {
         this.monthService = monthService;
     }
 
-    @GetMapping("/get/{monthNumber}")
+    @GetMapping("/months/{monthNumber}")
     public String getMonth(@PathVariable int monthNumber) {
         if (monthNumber > 0 && monthNumber < 13) {
             return monthService.getMonth(monthNumber);
