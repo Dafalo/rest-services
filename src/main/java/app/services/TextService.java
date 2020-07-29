@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class TextService {
     public List<String> convertStrings(List<String> stringList) {
         return stringList.stream()
-                .sorted(Comparator.comparing(String::length))
+                .sorted(Comparator.comparing(String::length).thenComparing(String::compareTo))
                 .map(str -> String.format("(%d): %s", str.length(), str))
                 .collect(Collectors.toList());
     }
